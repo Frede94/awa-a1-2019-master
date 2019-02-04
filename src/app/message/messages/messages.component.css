@@ -1,0 +1,68 @@
+.image{
+  width: 110%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* .button1 {
+  b1ackground-color: #4CAF50;
+  margin: 4px 2px;
+  border-radius: 8px;
+  margin-right: 12px;
+  padding: 10px;
+  width: 80px;
+}
+
+.button2 {
+  background-color: darkblue;
+  margin: 4px 2px;
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 4px;
+  width: 80px;
+  color: whitesmoke;
+}
+
+.button3 {
+  margin: 4px 2px;
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 4px;
+  width: 200px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+*/
