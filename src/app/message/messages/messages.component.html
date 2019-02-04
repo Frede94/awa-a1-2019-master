@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container pt-2 pb-2">
-  <div class="card">
+  <div class="card mt-2">
     <div class="col-12">
       <div class="col-8 float-left pb-1 pt-1">
         <!--<h2>{{messages?.length}} latest messages shown</h2>
@@ -29,43 +29,57 @@
       </div>
     </div>
   </div>
-  <div class="card">
+  <div class="card mb-2">
     <div class="card-body">
       <div class="col-12">
-        <ul>
-          <div *ngIf="latest">
-            <h3>Latest Message Information:</h3>
-            <h3>Time: {{latest.time}}</h3>
-            <h3>Morse: {{latest.message.toString()}}</h3>
-            <h3 style="color: darkblue">Message: {{convertMessage(latest.message)}} </h3>
-          </div>
-        </ul>
-        <hr>
-        <hr>
-        <hr>
-        <div>
-          <button class="btn-primary" (keydown.dot)="keyMorseDot(true);" (keyup.dot)="keyMorseDot(false);" (mousedown)="morseDot(true);"(mouseup)="morseDot(false);"><h2>Dot</h2></button>
-          <button class="btn-primary" (keydown.-)="keyMorseDash(true);" (keyup.-)="keyMorseDash(false);" (mousedown)="morseDash(true);"(mouseup)="morseDash(false);"><h2>Dash</h2></button>
-          <button class="btn-primary" (click)="next();"><h2>Next</h2></button>
-          <button class="btn-primary" (click)="space();"><h2>Space</h2></button>
-          <button class="btn-primary" (click)="clear();"><h2>Clear</h2></button>
+        <div class="card">
+          <ul>
+            <div *ngIf="latest">
+              <h3>Latest Message Information:</h3>
+              <h3>Time: {{latest.time}}</h3>
+              <h3>Morse: {{latest.message.toString()}}</h3>
+              <h3 style="color: darkblue">Message: {{convertMessage(latest.message)}} </h3>
+            </div>
+          </ul>
         </div>
+        <hr>
+        <hr>
+        <hr>
         <div>
-          Human readable message to send:
-          <div *ngIf="message">
-            <h1>{{message}}</h1>
-            <h2 style="color: darkblue"> {{convertMessage(humanReadableMessage)}} </h2>
+          <div class="card pt-2">
+            <div class="col-12">
+              <div class="col-6 float-left pt-3">
+                <div>
+                  <button class="btn-primary" (keydown.dot)="keyMorseDot()" (click)="morseDot()"><h2>Dot</h2></button>
+                  <button class="btn-primary" (keydown.-)="keyMorseDash()" (click)="morseDash()"><h2>Dash</h2></button>
+                  <!--<button class="btn-primary" (keydown.dot)="keyMorseDot(true);" (keyup.dot)="keyMorseDot(false);" (mousedown)="morseDot(true);"(mouseup)="morseDot(false);"><h2>Dot</h2></button>
+                  <button class="btn-primary" (keydown.-)="keyMorseDash(true);" (keyup.-)="keyMorseDash(false);" (mousedown)="morseDash(true);"(mouseup)="morseDash(false);"><h2>Dash</h2></button>-->
+                  <button class="btn-primary" (click)="next();"><h2>Next</h2></button>
+                  <button class="btn-primary" (click)="space();"><h2>Space</h2></button>
+                  <button class="btn-primary" (click)="clear();"><h2>Clear</h2></button>
+                </div>
+
+                Human readable message to send:
+                <div *ngIf="message">
+                  <h1>{{message}}</h1>
+                  <h2 style="color: darkblue"> {{convertMessage(humanReadableMessage)}} </h2>
+                </div>
+                <div *ngIf="!message">
+                  <h4 style="color: darkred">No message yet!</h4>
+                </div>
+                <button [disabled]="!message" class="btn-primary" (click)="send()" (keydown.enter)="send()"><h1>Send
+                  Message</h1></button>
+              </div>
+              <div class="col-6 float-right">
+                <h4 style="color: darkblue"> click "morse" button in less then a 120 ms for . and longer for
+                  - </h4>
+                <h4 style="color: darkblue"> click "next" to go to next letter</h4>
+                <h4 style="color: darkblue"> click "space" to go to next word</h4>
+                <h4 style="color: darkblue"> click "clear" to remove all</h4>
+                <h4 style="color: darkblue"> click "send" to broadcast message</h4>
+              </div>
+            </div>
           </div>
-          <div *ngIf="!message">
-            <h4 style="color: darkred">No message yet!</h4>
-          </div>
-          <button [disabled]="!message" class="btn-primary" (click)="send()"><h1>Send Message</h1></button>
-          <h4 style="color: darkblue"> click "morse" button in less then a 120 ms for . and longer for
-            - </h4>
-          <h4 style="color: darkblue"> click "next" to go to next letter</h4>
-          <h4 style="color: darkblue"> click "space" to go to next word</h4>
-          <h4 style="color: darkblue"> click "clear" to remove all</h4>
-          <h4 style="color: darkblue"> click "send" to broadcast message</h4>
         </div>
       </div>
     </div>
