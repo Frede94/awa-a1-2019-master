@@ -1,11 +1,22 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
-import {MessagesComponent} from './message/messages/messages.component';
 
 
 const routes: Routes = [
-  {path: '', component: MessagesComponent}
+  {
+    path: 'message-log',
+    loadChildren: './message/message-log/message-log.module#MessageLogModule'
+  },
+  {
+    path: 'messages',
+    loadChildren: './message/messages/messages.module#MessagesModule'
+  },
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

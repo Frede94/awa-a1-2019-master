@@ -13,7 +13,7 @@
           </tr>
           <tr *ngFor="let message of messages">
             <td>
-              {{message.time}}
+              {{message.time.toDate() | date: 'dd/MM/yy h:mm' }}
             </td>
             <td>
               {{convertMessage(message.message)}}
@@ -36,7 +36,7 @@
           <ul>
             <div *ngIf="latest">
               <h3>Latest Message Information:</h3>
-              <h3>Time: {{latest.time}}</h3>
+              <h3>Time: {{latest.time.toDate() | date: 'dd/MM/yy h:mm'}}</h3>
               <h3>Morse: {{latest.message.toString()}}</h3>
               <h3 style="color: darkblue">Message: {{convertMessage(latest.message)}} </h3>
             </div>
@@ -58,16 +58,15 @@
                   <button class="btn-primary" (click)="space();"><h2>Space</h2></button>
                   <button class="btn-primary" (click)="clear();"><h2>Clear</h2></button>
                 </div>
-
                 Human readable message to send:
                 <div *ngIf="message">
                   <h1>{{message}}</h1>
-                  <h2 style="color: darkblue"> {{convertMessage(humanReadableMessage)}} </h2>
+                  <h2 style="color: darkblue">{{convertMessage(message)}}</h2>
                 </div>
                 <div *ngIf="!message">
                   <h4 style="color: darkred">No message yet!</h4>
                 </div>
-                <button [disabled]="!message" class="btn-primary" (click)="send()" (keydown.enter)="send()"><h1>Send
+                <button [disabled]="!message" class="btn-primary mb-4" (click)="send()" (keydown.enter)="send()"><h1>Send
                   Message</h1></button>
               </div>
               <div class="col-6 float-right">

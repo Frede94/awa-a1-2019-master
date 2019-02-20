@@ -1,5 +1,5 @@
 .navbar-new-top{
-  background: #69bddb;
+  background: darkgrey;
   background-image: url("https://res.cloudinary.com/dsrzs78xs/image/upload/v1544530382/img-noise-361x370.png");
   position: relative;
 }
@@ -26,7 +26,7 @@
   transition: 1s ease;
 }
 .navbar-nav .nav-item a:hover{
-  color: #0062cc;
+  color: darkgrey;
 }
 .dropdown-menu.show{
   background: #f8f9fa;
@@ -50,17 +50,19 @@
   border: none;
   border-radius: 1rem;
   padding: 8%;
-  background: #0062cc;
+  background: darkgrey;
   color: #fff;
   font-weight: 700;
   font-size: 13px;
   cursor: pointer;
 }
 .btn-primary{
-  background-color: lightskyblue;
+  margin-top: 6px;
+  height: 50px;
+  background-color: grey;
+  border: black;
   margin-bottom: 8px !important;
   width: 130px !important;
-  box-shadow:         5px 5px 0px rgba(0, 0, 0, 0.3) !important;
 }
 .btn-primary:active {
   margin-top: 5px !important;
@@ -71,4 +73,16 @@
 }
 .paddingtonimg{
   padding-top: 2%;
+}
+.leftLogin{
+  float:left;
+  width:35%;
+  overflow:hidden;
+
+}
+.centerStuff{
+  float:left;
+  width:65%;
+  overflow:hidden;
+
 }
