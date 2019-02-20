@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {MessageService} from './message/shared/message.service';
+import {MessageService} from './shared/message.service';
 import {Observable} from 'rxjs/internal/Observable';
 
 @Component({

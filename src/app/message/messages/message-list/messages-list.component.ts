@@ -1,6 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/internal/Observable';
-import {MessageService} from '../../shared/message.service';
+import {MessageService} from '../../../shared/message.service';
 
 
 @Component({
