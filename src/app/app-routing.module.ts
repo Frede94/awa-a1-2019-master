@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 
 
+
 const routes: Routes = [
   {
     path: 'message-log',
@@ -13,10 +14,18 @@ const routes: Routes = [
     loadChildren: './message/messages/messages.module#MessagesModule'
   },
   {
+    path: 'users',
+    loadChildren: './users/users.module#UsersModule'
+  },
+  {
+    path: '',
+    loadChildren: './welcome-login/welcome-login.module#WelcomeLoginModule'
+  },
+  /*{
     path: '',
     redirectTo: '',
     pathMatch: 'full'
-  }
+  }*/
 ];
 
 @NgModule({
