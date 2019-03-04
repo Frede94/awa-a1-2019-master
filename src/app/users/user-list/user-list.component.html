@@ -9,6 +9,22 @@
       <div class="card-body">
         <div class="card">
           <div class="card-body">
+            <table>
+              <tr>
+                <th>ID</th>
+                <th>Billede</th>
+                <th>Navn</th>
+                <th>Options</th>
+              </tr>
+              <tr *ngFor="let user of users |async"> <!--*ngFor="let kunder of kunderArray"-->
+                <td>{{user.id}}</td>
+                <td><img [src]="user.url" *ngIf="user.url" style="width: 50px; height: 50px;"></td>
+                <td>{{user.name}}</td>
+                <td>
+                  <button style="float: right" (click)="deleteUsers(user.id)" class="ml-1 btn btn-danger">Slet</button>
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>

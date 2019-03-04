@@ -2,10 +2,10 @@ import {Injectable} from '@angular/core';
 import {AngularFireStorage} from '@angular/fire/storage';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {ImageMetadata} from './image-metadata';
-import {Observable} from 'rxjs/internal/Observable';
 import {FileMetadata} from './file-metadata';
 import {map, switchMap} from 'rxjs/operators';
-import {defer} from 'rxjs/internal/observable/defer';
+import {defer, from, Observable} from 'rxjs';
+
 
 
 @Injectable({

@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import {MessageService} from './shared/message.service';
-import {Observable} from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-root',

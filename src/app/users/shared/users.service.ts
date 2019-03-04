@@ -2,8 +2,7 @@ import {Injectable} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {first, map, switchMap, tap} from 'rxjs/operators';
 import {User} from './user.model';
-import {Observable} from 'rxjs/internal/Observable';
-import {from} from 'rxjs/internal/observable/from';
+import {Observable, from} from 'rxjs';
 import {FileService} from '../../files/shared/file.service';
 import {ImageMetadata} from '../../files/shared/image-metadata';
 
@@ -93,7 +92,7 @@ export class UsersService {
 
   private addUser(product: User): Observable<User> {
     return from(
-      this.db.collection('products').add(
+      this.db.collection('users').add(
         {
           name: product.name,
           pictureId: product.pictureId

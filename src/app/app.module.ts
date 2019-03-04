@@ -9,6 +9,7 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AppRoutingModule} from './app-routing.module';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import {AngularFireStorageModule} from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireStorageModule,
     MomentModule,
     AppRoutingModule,
     ReactiveFormsModule
@@ -30,3 +32,5 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// link til website: https://morsecode-frede.firebaseapp.com/users
