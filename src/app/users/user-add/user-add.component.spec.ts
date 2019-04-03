@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserAddComponent } from './user-add.component';
+import {ReactiveErrors} from '@angular/forms/src/directives/reactive_errors';
+import {ReactiveFormsModule} from '@angular/forms';
+import {ImageCropperModule} from 'ngx-image-cropper';
+import {RouterTestingModule} from '@angular/router/testing';
+import {UsersService} from '../shared/users.service';
 
 describe('UserAddComponent', () => {
   let component: UserAddComponent;
@@ -8,7 +13,15 @@ describe('UserAddComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserAddComponent ]
+      declarations: [ UserAddComponent ],
+      imports: [
+        ReactiveFormsModule,
+        ImageCropperModule,
+        RouterTestingModule
+      ],
+      providers: [
+        {provide: UsersService, use: UsersServiceStub}
+      ]
     })
     .compileComponents();
   }));
@@ -23,3 +36,5 @@ describe('UserAddComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+class UsersServiceStub {}

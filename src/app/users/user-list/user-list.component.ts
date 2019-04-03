@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {User} from '../shared/user.model';
 import {map, switchMap, tap} from 'rxjs/operators';
 import {defer, from, Observable} from 'rxjs';
@@ -12,6 +12,7 @@ import {UsersService} from '../shared/users.service';
 })
 export class UserListComponent implements OnInit {
   users: Observable<User[]>;
+
   constructor(private us: UsersService,
               private fs: FileService) {
   }
